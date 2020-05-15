@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
     <menu id="application-muzey" insertBefore="administration">
+        <item screen="muzey_Archaeologist.browse"/>
+        <item screen="muzey_Era.browse"/>
+        <item screen="muzey_Exhibit.browse"/>
+        <item screen="muzey_ExType.browse"/>
+        <item screen="muzey_KindOfEra.browse"/>
+        <item screen="muzey_Place.browse"/>
+        <item screen="muzey_University.browse"/>
     </menu>
 </menu-config>

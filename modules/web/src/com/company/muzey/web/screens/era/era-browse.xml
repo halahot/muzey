@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://browseCaption"
+        focusComponent="erasTable"
+        messagesPack="com.company.muzey.web.screens.era">
+    <data readOnly="true">
+        <collection id="erasDc"
+                    class="com.company.muzey.entity.Era"
+                    view="era-view">
+            <loader id="erasDl">
+                <query>
+                    <![CDATA[select e from muzey_Era e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="erasTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="erasTable"
+                dataLoader="erasDl">
+            <properties include=".*"/>
+        </filter>
+        <table id="erasTable"
+               width="100%"
+               dataContainer="erasDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="kind"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="erasTable.create"/>
+                <button id="editBtn" action="erasTable.edit"/>
+                <button id="removeBtn" action="erasTable.remove"/>
+            </buttonsPanel>
+        </table>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

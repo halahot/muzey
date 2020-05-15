@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://browseCaption"
+        focusComponent="archaeologistsTable"
+        messagesPack="com.company.muzey.web.screens.archaeologist">
+    <data readOnly="true">
+        <collection id="archaeologistsDc"
+                    class="com.company.muzey.entity.Archaeologist"
+                    view="archaeologist-view">
+            <loader id="archaeologistsDl">
+                <query>
+                    <![CDATA[select e from muzey_Archaeologist e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="archaeologistsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="archaeologistsTable"
+                dataLoader="archaeologistsDl">
+            <properties include=".*"/>
+        </filter>
+        <table id="archaeologistsTable"
+               width="100%"
+               dataContainer="archaeologistsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="university"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="archaeologistsTable.create"/>
+                <button id="editBtn" action="archaeologistsTable.edit"/>
+                <button id="removeBtn" action="archaeologistsTable.remove"/>
+            </buttonsPanel>
+        </table>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

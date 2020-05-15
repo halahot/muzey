@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://browseCaption"
+        focusComponent="kindOfErasTable"
+        messagesPack="com.company.muzey.web.screens.kindofera">
+    <data readOnly="true">
+        <collection id="kindOfErasDc"
+                    class="com.company.muzey.entity.KindOfEra"
+                    view="_local">
+            <loader id="kindOfErasDl">
+                <query>
+                    <![CDATA[select e from muzey_KindOfEra e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="kindOfErasTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="kindOfErasTable"
+                dataLoader="kindOfErasDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="kindOfErasTable"
+                    width="100%"
+                    dataContainer="kindOfErasDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="title"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="kindOfErasTable.create"/>
+                <button id="editBtn" action="kindOfErasTable.edit"/>
+                <button id="removeBtn" action="kindOfErasTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://browseCaption"
+        focusComponent="exhibitsTable"
+        messagesPack="com.company.muzey.web.screens.exhibit">
+    <data readOnly="true">
+        <collection id="exhibitsDc"
+                    class="com.company.muzey.entity.Exhibit"
+                    view="exhibit-view">
+            <loader id="exhibitsDl">
+                <query>
+                    <![CDATA[select e from muzey_Exhibit e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="exhibitsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="exhibitsTable"
+                dataLoader="exhibitsDl">
+            <properties include=".*"/>
+        </filter>
+        <table id="exhibitsTable"
+               width="100%"
+               dataContainer="exhibitsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="place"/>
+                <column id="era"/>
+                <column id="extType"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="exhibitsTable.create"/>
+                <button id="editBtn" action="exhibitsTable.edit"/>
+                <button id="removeBtn" action="exhibitsTable.remove"/>
+            </buttonsPanel>
+        </table>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>
