@@ -2,5 +2,12 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
     <persistence-unit name="muzey" transaction-type="RESOURCE_LOCAL">
 
+        <class>com.company.muzey.entity.Archaeologist</class>
+        <class>com.company.muzey.entity.University</class>
+        <class>com.company.muzey.entity.Exhibit</class>
+        <class>com.company.muzey.entity.Place</class>
+        <class>com.company.muzey.entity.Era</class>
+        <class>com.company.muzey.entity.KindOfEra</class>
+        <class>com.company.muzey.entity.ExType</class>
     </persistence-unit>
 </persistence>
