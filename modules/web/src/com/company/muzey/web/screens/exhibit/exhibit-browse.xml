@@ -33,7 +33,9 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
+                <column id="title"/>
                 <column id="place"/>
+                <column id="author"/>
                 <column id="era"/>
                 <column id="extType"/>
             </columns>

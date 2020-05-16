@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CubaPluginProjectSettings">
+    <option name="stateVersion" value="1" />
+    <option name="savedDbProperties">
+      <list>
+        <SavedDbProperties>
+          <option name="customUrl" value="true" />
+          <option name="databaseName" value="muzey" />
+          <option name="dbType" value="postgres" />
+          <option name="host" value="localhost" />
+          <option name="pass" value="cuba" />
+          <option name="port" value="5433" />
+          <option name="systemPassword" value="" />
+          <option name="systemUser" value="" />
+          <option name="url" value="jdbc:postgresql://localhost:5433/muzey" />
+          <option name="user" value="cuba" />
+        </SavedDbProperties>
+        <SavedDbProperties>
+          <option name="customUrl" value="true" />
+          <option name="databaseName" value="muzey" />
+          <option name="dbType" value="mssql" />
+          <option name="host" value="localhost" />
+          <option name="pass" value="saPass1" />
+          <option name="systemPassword" value="" />
+          <option name="systemUser" value="" />
+          <option name="url" value="jdbc:sqlserver://localhost;databaseName=muzey" />
+          <option name="user" value="sa" />
+        </SavedDbProperties>
+      </list>
+    </option>
+  </component>
+</project>

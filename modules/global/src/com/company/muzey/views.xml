@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
 
-    <view entity="muzey_Archaeologist" name="archaeologist-view">
+    <view entity="muzey_Archaeologist" name="archaeologist-view" extends="_local">
         <property name="university" view="_local"/>
     </view>
-    <view entity="muzey_Era" name="era-view">
+    <view entity="muzey_Era" name="era-view" extends="_local">
         <property name="kind" view="_local"/>
     </view>
-    <view entity="muzey_Exhibit" name="exhibit-view">
+    <view entity="muzey_Exhibit" name="exhibit-view" extends="_local">
         <property name="era" view="era-view"/>
         <property name="place" view="_local"/>
         <property name="extType" view="_local"/>

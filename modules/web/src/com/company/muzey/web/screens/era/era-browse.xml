@@ -24,15 +24,18 @@
                 dataLoader="erasDl">
             <properties include=".*"/>
         </filter>
-        <table id="erasTable"
-               width="100%"
-               dataContainer="erasDc">
+        <groupTable id="erasTable"
+                    width="100%"
+                    dataContainer="erasDc">
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
+                <column id="title"/>
+                <column id="timeStart"/>
+                <column id="timeEnd"/>
                 <column id="kind"/>
             </columns>
             <rowsCount/>
@@ -42,7 +45,7 @@
                 <button id="editBtn" action="erasTable.edit"/>
                 <button id="removeBtn" action="erasTable.remove"/>
             </buttonsPanel>
-        </table>
+        </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>

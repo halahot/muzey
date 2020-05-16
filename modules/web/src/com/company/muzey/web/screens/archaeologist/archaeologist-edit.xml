@@ -10,11 +10,15 @@
             <loader/>
         </instance>
     </data>
-    <dialogMode height="600"
-                width="800"/>
+    <dialogMode height="AUTO"
+                width="AUTO"
+                modal="true"
+                forceDialog="true"/>
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="archaeologistDc">
             <column width="250px">
+                <textArea id="fullNameField" property="fullName" rows="5"/>
+                <textField id="ageField" property="age"/>
                 <pickerField id="universityField" property="university">
                     <actions>
                         <action id="lookup" type="picker_lookup"/>

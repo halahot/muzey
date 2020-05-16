@@ -10,11 +10,16 @@
             <loader/>
         </instance>
     </data>
-    <dialogMode height="600"
-                width="800"/>
+    <dialogMode height="AUTO"
+                width="AUTO"
+                modal="true"
+                forceDialog="true"/>
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="eraDc">
             <column width="250px">
+                <textArea id="titleField" property="title" rows="5"/>
+                <textField id="timeStartField" property="timeStart"/>
+                <textField id="timeEndField" property="timeEnd"/>
                 <pickerField id="kindField" property="kind">
                     <actions>
                         <action id="lookup" type="picker_lookup"/>

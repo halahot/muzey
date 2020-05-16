@@ -24,15 +24,17 @@
                 dataLoader="archaeologistsDl">
             <properties include=".*"/>
         </filter>
-        <table id="archaeologistsTable"
-               width="100%"
-               dataContainer="archaeologistsDc">
+        <groupTable id="archaeologistsTable"
+                    width="100%"
+                    dataContainer="archaeologistsDc">
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
+                <column id="fullName"/>
+                <column id="age"/>
                 <column id="university"/>
             </columns>
             <rowsCount/>
@@ -42,7 +44,7 @@
                 <button id="editBtn" action="archaeologistsTable.edit"/>
                 <button id="removeBtn" action="archaeologistsTable.remove"/>
             </buttonsPanel>
-        </table>
+        </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>
